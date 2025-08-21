@@ -16,6 +16,7 @@ export default function Home() {
         <Text style={styles.welcome}>Bem vindo, Carlos</Text>
         <Text style={styles.gastoLabel}>Você gastou hoje</Text>
         <Text style={styles.valor}>R$ 500</Text>
+        <Text style={styles.periodo}>ESCOLHER PERÍODO</Text>
 
         {/* Período */}
         <View style={styles.periodContainer}>
@@ -55,37 +56,43 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#faeae5',
     alignItems: 'center',
-    paddingTop: 40,
+    paddingTop: 0,
   },
   header: {
     backgroundColor: '#d94d4d',
     width: '100%',
     alignItems: 'center',
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    paddingVertical: 60,
+    borderBottomLeftRadius: 70,
+    borderBottomRightRadius: 70,
+    paddingVertical: 5,
+    paddingTop:40,
   },
   welcome: {
-    fontSize: 22,
+    fontSize: 32,
     color: '#fff',
-    fontWeight: 'bold',
+    paddingBottom: 30,
   },
   gastoLabel: {
     color: '#fff',
-    marginTop: 10,
+    marginTop: 80,
   },
   valor: {
     fontSize: 30,
     color: '#fff',
-    fontWeight: 'bold',
-    marginVertical: 10,
+    marginVertical: 5,
+  },
+    periodo: {
+    color: '#fff',
+    marginTop: 80,
+    marginBottom: 10,
   },
   periodContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
     paddingHorizontal: 30,
-    marginTop: 10,
+    marginBottom: 10,
+    color: 'white',
   },
   period: {
     color: '#fff',
@@ -96,8 +103,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '90%',
     marginVertical: 20,
+    backgroundColor:'black',
   },
-  item: {
+  item: { //alterar aqui o tamanho da caixa branca!
     backgroundColor: '#fff',
     padding: 15,
     marginVertical: 8,
