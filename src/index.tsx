@@ -1,7 +1,9 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
-import { MaterialIcons, FontAwesome5, Entypo } from '@expo/vector-icons';
+import { StyleSheet, Text, View, Pressable, FlatList } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faPlaneUp, faCar, faHouse, faUtensils, faWrench } from '@fortawesome/free-solid-svg-icons';
 
 const gastos = [
   { id: '1', nome: 'Pizza (R$ 30)', data: '20/01/2020' },
@@ -28,11 +30,11 @@ export default function Home() {
 
       {/* Ícones de categoria */}
       <View style={styles.iconsContainer}>
-        <TouchableOpacity><FontAwesome5 name="plane" size={24} color="black" /></TouchableOpacity>
-        <TouchableOpacity><FontAwesome5 name="home" size={24} color="black" /></TouchableOpacity>
-        <TouchableOpacity><FontAwesome5 name="utensils" size={24} color="black" /></TouchableOpacity>
-        <TouchableOpacity><FontAwesome5 name="car" size={24} color="black" /></TouchableOpacity>
-        <TouchableOpacity><FontAwesome5 name="tools" size={24} color="black" /></TouchableOpacity>
+        <Pressable style={({ pressed }) => [styles.iconBox, pressed && styles.iconBoxPressed]}><FontAwesome5 name="plane" size={24} color="white" /></Pressable>
+        <Pressable style={({ pressed }) => [styles.iconBox, pressed && styles.iconBoxPressed]}><FontAwesome5 name="home" size={24} color="white" /></Pressable>
+        <Pressable style={({ pressed }) => [styles.iconBox, pressed && styles.iconBoxPressed]}><FontAwesome5 name="utensils" size={24} color="white" /></Pressable>
+        <Pressable style={({ pressed }) => [styles.iconBox, pressed && styles.iconBoxPressed]}><FontAwesome5 name="car" size={24} color="white" /></Pressable>
+        <Pressable style={({ pressed }) => [styles.iconBox, pressed && styles.iconBoxPressed]}><FontAwesome5 name="tools" size={24} color="white" /></Pressable>
       </View>
 
       {/* Lista de gastos */}
@@ -58,6 +60,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingTop: 0,
   },
+
   header: {
     backgroundColor: '#d94d4d',
     width: '100%',
@@ -67,25 +70,30 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingTop:40,
   },
+
   welcome: {
     fontSize: 32,
     color: '#fff',
     paddingBottom: 30,
   },
+
   gastoLabel: {
     color: '#fff',
     marginTop: 80,
   },
+
   valor: {
     fontSize: 30,
     color: '#fff',
     marginVertical: 5,
   },
+
     periodo: {
     color: '#fff',
     marginTop: 80,
     marginBottom: 10,
   },
+
   periodContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -94,27 +102,42 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: 'white',
   },
+
   period: {
     color: '#fff',
     fontWeight: '600',
   },
+
   iconsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '90%',
     marginVertical: 20,
-    backgroundColor:'black',
+
   },
-  item: { //alterar aqui o tamanho da caixa branca!
+
+  iconBox:{
+    backgroundColor: 'black',
+    padding: 10,
+    borderRadius: 4,
+  },
+
+  iconBoxPressed: {
+    backgroundColor: '#333',
+    transform: [{ scale: 0.95 }] },
+
+  item: { 
     backgroundColor: '#fff',
-    padding: 15,
-    marginVertical: 8,
+    padding: 20,
+    marginVertical: 12,
     borderRadius: 10,
-    width: 300,
+    width: 350,
     justifyContent: 'space-between',
     flexDirection: 'row',
   },
+
   list: {
     alignItems: 'center',
   },
+
 });
